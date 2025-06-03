@@ -1,0 +1,22 @@
+# .github/workflows/export-files.yml
+name: Export Files as Zip
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Zip all files
+        run: |
+          zip -r export.zip .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-files-zip
+          path: export.zip
