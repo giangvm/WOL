@@ -3,7 +3,8 @@ name: Export Files as Zip
 
 on:
   workflow_dispatch:
-
+  repository_dispatch:
+    types: [trigger-from-workato]
 jobs:
   export:
     runs-on: ubuntu-latest
