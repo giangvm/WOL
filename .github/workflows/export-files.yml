@@ -15,7 +15,7 @@ jobs:
       - name: Zip all files
         run: |
           cd  Source
-          zip -r export.zip .
+          zip -r ../export.zip .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
