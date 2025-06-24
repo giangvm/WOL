@@ -14,6 +14,7 @@ jobs:
 
       - name: Zip all files
         run: |
+          cd  Source
           zip -r export.zip .
 
       - name: Upload artifact
