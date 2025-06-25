@@ -7,10 +7,6 @@ on:
         description: 'Folder to navigate to (relative path)'
         required: true
         type: string
-      message:
-        description: 'Custom log message'
-        required: false
-        type: string
 
 jobs:
   workato-job:
