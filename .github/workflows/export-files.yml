@@ -14,7 +14,7 @@ jobs:
 
       - name: Zip all files
         run: |
-          cd  Source
+          cd  ${{github.event.inputs.folder_name}} 
           zip -r ../export.zip .
 
       - name: Upload artifact
