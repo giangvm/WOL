@@ -14,9 +14,7 @@ jobs:
 
       - name: Zip all files
         run: |
-          FOLDER="${{ github.event.inputs.subfolder }}"
-          cd  "$FOLDER"
-          echo "✅ Now in folder: $(pwd)"
+          cd Source
           zip -r ../../source.zip .
 
       - name: Upload artifact
