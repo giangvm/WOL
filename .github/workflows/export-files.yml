@@ -1,5 +1,5 @@
 # .github/workflows/export-files.yml
-name: Export Files as Zip
+name: Trigger from WorkAto
 
 on:
   workflow_dispatch:
