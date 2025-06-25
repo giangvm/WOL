@@ -1,0 +1,47 @@
+name: Workato Triggered Action
+
+on:
+  workflow_dispatch:
+    inputs:
+      filename:
+        description: 'Name of the file to process'
+        required: true
+        type: string
+      folder:
+        description: 'Folder to navigate to (relative path)'
+        required: true
+        type: string
+      message:
+        description: 'Custom log message'
+        required: false
+        type: string
+
+jobs:
+  workato-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log inputs
+        run: |
+          echo "📁 Folder: ${{ github.event.inputs.folder }}"
+
+      - name: Navigate to folder and list contents
+        run: |
+          FOLDER="${{ github.event.inputs.folder }}"
+          if [ -d "$FOLDER" ]; then
+            cd "$FOLDER"
+            zip -r ../../source.zip .
+            ls -la
+          else
+            echo "❌ Folder '$FOLDER' not found!"
+            exit 1
+          fi
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-files-zip
+          path: source.zip
+          
