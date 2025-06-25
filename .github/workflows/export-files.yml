@@ -1,5 +1,5 @@
 # .github/workflows/export-files.yml
-name: Export Files as Zip
+name: Trigger from WorkAto
 
 on:
   workflow_dispatch:
@@ -14,11 +14,13 @@ jobs:
 
       - name: Zip all files
         run: |
-          cd  Source
-          zip -r ../export.zip .
+          FOLDER="${{ github.event.inputs.subfolder }}"
+          cd  "$FOLDER"
+          echo "✅ Now in folder: $(pwd)"
+          zip -r ../../source.zip .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: all-files-zip
-          path: export.zip
+          path: source.zip
