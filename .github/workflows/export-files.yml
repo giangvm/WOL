@@ -14,7 +14,9 @@ jobs:
 
       - name: Zip all files
         run: |
-          cd  Source/New folder
+          FOLDER="Source/New folder"
+          cd  "$FOLDER"
+          echo "✅ Now in folder: $(pwd)"
           zip -r ../export.zip .
 
       - name: Upload artifact
