@@ -3,10 +3,6 @@ name: Workato Triggered Action
 on:
   workflow_dispatch:
     inputs:
-      filename:
-        description: 'Name of the file to process'
-        required: true
-        type: string
       folder:
         description: 'Folder to navigate to (relative path)'
         required: true
