@@ -1,24 +1,28 @@
 # .github/workflows/export-files.yml
-name: Export Files as Zip
+name: Run GitHub Action on Subfolder
 
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types: [trigger-from-workato]
+    inputs:
+      subfolder:
+        description: 'Path of subfolder to process'
+        required: true
+        type: string
+
 jobs:
-  export:
+  run-subfolder-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Zip all files
+      - name: Go to subfolder and run command
         run: |
-          cd  Source
-          zip -r ../export.zip .
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: all-files-zip
-          path: export.zip
+          if [ -d "${{ github.event.inputs.subfolder }}" ]; then
+            cd "${{ github.event.inputs.subfolder }}"
+            echo "✅ Inside subfolder: $(pwd)"
+            ls -la
+          else
+            echo "❌ Subfolder '${{ github.event.inputs.subfolder }}' not found"
+            exit 1
+          fi
