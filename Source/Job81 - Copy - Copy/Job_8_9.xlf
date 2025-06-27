@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+ <file original="xliff-core-1.2-strict.xsd" source-language="en" target-language="fr" datatype="plaintext" date="2025-05-29T10:05:30Z">
+  <header>
+   <phase-group>
+    <phase tool-id="tmgmt" phase-name="extraction" process-name="extraction" job-id="8"/>
+   </phase-group>
+   <tool tool-id="tmgmt" tool-name="Drupal Translation Management Tools"/>
+  </header>
+  <body>
+   <group id="9">
+    <note>Drupal_test_52901</note>
+    <trans-unit id="9][title][0][value" resname="9][title][0][value" size-unit="char" maxwidth="255">
+     <source xml:lang="en"><![CDATA[Drupal_test_52901]]></source>
+     <target xml:lang="fr"><![CDATA[Drupal_test_52901]]></target>
+    </trans-unit>
+    <trans-unit id="9][body][0][value" resname="9][body][0][value">
+     <source xml:lang="en"><bpt id="tjiid9-17">&lt;p&gt;</bpt><![CDATA[test1 test2]]><ept id="tjiid9-17">&lt;/p&gt;</ept><bpt id="tjiid9-19">&lt;p&gt;</bpt><![CDATA[test3]]><ept id="tjiid9-19">&lt;/p&gt;</ept><bpt id="tjiid9-21">&lt;p&gt;</bpt><![CDATA[tetetste4]]><ept id="tjiid9-21">&lt;/p&gt;</ept><bpt id="tjiid9-23">&lt;p&gt;</bpt><![CDATA[1233]]><ept id="tjiid9-23">&lt;/p&gt;</ept></source>
+     <target xml:lang="fr"><bpt id="tjiid9-25">&lt;p&gt;</bpt><![CDATA[test1 test2]]><ept id="tjiid9-25">&lt;/p&gt;</ept><bpt id="tjiid9-27">&lt;p&gt;</bpt><![CDATA[test3]]><ept id="tjiid9-27">&lt;/p&gt;</ept><bpt id="tjiid9-29">&lt;p&gt;</bpt><![CDATA[tetetste4]]><ept id="tjiid9-29">&lt;/p&gt;</ept><bpt id="tjiid9-31">&lt;p&gt;</bpt><![CDATA[1233]]><ept id="tjiid9-31">&lt;/p&gt;</ept></target>
+     <note>Body &gt; Text</note>
+    </trans-unit>
+   </group>
+  </body>
+ </file>
+</xliff>
